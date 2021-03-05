@@ -4,3 +4,5 @@ Deep learning networks have been increasingly attracting attention in many field
 For more information, The paper of this dataset is publicly available on arXiv(https://arxiv.org/abs/2009.11662).
 
 Due to size limitations, EEG and EMG epochs with a sample rate of 512hz are temporarily placed in the G-node database (https://gin.g-node.org/NCClab/EEGdenoiseNet). 
+
+Single-Channel-EEG-Denoise tool box could be find in Github(https://github.com/ncclabsustech/Single-Channel-EEG-Denoise)
