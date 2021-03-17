@@ -28,7 +28,7 @@ denoise_network = 'Simple_CNN'    # fcNN & Simple_CNN & Complex_CNN & RNN_lstm  
 noise_type = 'EOG'
 
 
-result_location = r'E:/experiment_data/EEG_EEGN/'     #  Where to export network results
+result_location = r'E:/experiment_data/EEG_EEGN/'     #  Where to export network results   ############ change it to your own location #########
 foldername = 'EMG_unet112dense_10_rmsp_test'            # the name of the target folder (should be change when we want to train a new network)
 os.environ['CUDA_VISIBLE_DEVICES']='0'
 save_train = False
@@ -56,7 +56,7 @@ denoiseNN = tf.keras.models.load_model(path)
 '''
 #################################################### 数据输入 Import data #####################################################
 
-file_location = 'E:/experiment_data/EEGdenoiseNet/data/'                    #change it to you only location
+file_location = 'E:/experiment_data/EEGdenoiseNet/data/'                    ############ change it to your own location #########
 if noise_type == 'EOG':
   EEG_all = np.load( file_location + 'EEG_all_epochs.npy')                              
   noise_all = np.load( file_location + 'EOG_all_epochs.npy') 
