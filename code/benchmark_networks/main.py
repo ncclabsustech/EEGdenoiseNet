@@ -13,7 +13,7 @@ from train_method import *
 from save_method import *
 import sys
 import os
-sys.path.append('../')
+#sys.path.append('../')
 from Novel_CNN import *
 
 # EEGdenoiseNet V2
@@ -25,10 +25,10 @@ epochs = 50    # training epoch
 batch_size  = 40    # training batch size
 combin_num = 10    # combin EEG and noise ? times
 denoise_network = 'Simple_CNN'    # fcNN & Simple_CNN & Complex_CNN & RNN_lstm  & Novel_CNN 
-noise_type = 'EMG'
+noise_type = 'EOG'
 
 
-result_location = r'/home/ncclab306/GAN_EEG/EEGdenoiseNet/data/'     #  Where to export network results
+result_location = r'E:/experiment_data/EEG_EEGN/'     #  Where to export network results
 foldername = 'EMG_unet112dense_10_rmsp_test'            # the name of the target folder (should be change when we want to train a new network)
 os.environ['CUDA_VISIBLE_DEVICES']='0'
 save_train = False
@@ -56,10 +56,10 @@ denoiseNN = tf.keras.models.load_model(path)
 '''
 #################################################### 数据输入 Import data #####################################################
 
-file_location = '/home/ncclab306/GAN_EEG/EEGdenoiseNet/data/'
+file_location = 'E:/experiment_data/EEGdenoiseNet/data/'                    #change it to you only location
 if noise_type == 'EOG':
-  EEG_all = np.load( file_location + 'EEG_256hz_3400_random.npy')                              
-  noise_all = np.load( file_location + 'EOG_256hz_3400_random.npy') 
+  EEG_all = np.load( file_location + 'EEG_all_epochs.npy')                              
+  noise_all = np.load( file_location + 'EOG_all_epochs.npy') 
 elif noise_type == 'EMG':
   EEG_all = np.load( file_location + 'EEG_all_epochs_512hz.npy')                              
   noise_all = np.load( file_location + 'EMG_all_epochs_512hz.npy') 

@@ -37,6 +37,11 @@ def prepare_data(EEG_all, noise_all, combin_num, train_per, noise_type):
         reuse_num = noise_all_random.shape[0] - EEG_all_random.shape[0]
         EEG_reuse = EEG_all_random[0 : reuse_num, :]
         EEG_all_random = np.vstack([EEG_reuse, EEG_all_random])
+        print('EEG segments after reuse: ',EEG_all_random.shape[0])
+
+    elif noise_type == 'EOG':  # We will drop some of the EEG signal to much the number of EMG
+        EEG_all_random = EEG_all_random[0:noise_all_random.shape[0]]
+        print('EEG segments after drop: ',EEG_all_random.shape[0])
 
 
     # get the 
