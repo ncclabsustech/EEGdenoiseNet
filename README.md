@@ -6,3 +6,13 @@ For more information, The paper of this dataset is publicly available on arXiv(h
 Due to size limitations, EEG and EMG epochs with a sample rate of 512hz are temporarily placed in the G-node database (https://gin.g-node.org/NCClab/EEGdenoiseNet). 
 
 Single-Channel-EEG-Denoise tool box could be find in Github(https://github.com/ncclabsustech/Single-Channel-EEG-Denoise)
+
+
+
+### Setup Enviroment
+
+* [tensorflow] version = 2.2
+* Python version = 3.6
+
+## Further research project in NCCLab
+Our laboratory also proposed an deep learning framework to separate neural signal and artifacts in the embedding space and reconstruct the denoised signal, which is called DeepSeparator. Could be find in Github(https://github.com/ncclabsustech/DeepSeparator).
